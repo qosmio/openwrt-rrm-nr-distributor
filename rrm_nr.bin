@@ -1,10 +1,8 @@
 #!/bin/sh
 # shellcheck disable=1091
 
-{ [ -r /lib/functions/rrm_nr.sh ] && . /lib/functions/rrm_nr.sh; } || {
-  echo "Error: Missing rrm_nr_common.sh file"
-  exit 1
-}
+# shellcheck source=rrm_nr.sh
+. "$IPKG_INSTROOT/lib/functions/rrm_nr.sh"
 
 # This is an alternate approach to the original "sleep 60" in the while loop below.
 # The issue with "sleep 60" is that the rrm_nr service will not exit cleanly because

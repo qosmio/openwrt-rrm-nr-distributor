@@ -5,10 +5,8 @@ NAME=rrm_nr
 USE_PROCD=1
 START=99
 
-{ [ -r /lib/functions/rrm_nr.sh ] && . /lib/functions/rrm_nr.sh; } || {
-  echo "Error: Missing rrm_nr_common.sh file"
-  exit 1
-}
+# shellcheck source=rrm_nr.sh
+. "$IPKG_INSTROOT/lib/functions/rrm_nr.sh"
 
 custom_procd_add_mdns() {
   local all_rrm_nr

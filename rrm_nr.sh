@@ -1,7 +1,7 @@
 #!/bin/sh
 # shellcheck disable=1091,3043,2317,3060,3057
 
-. /lib/functions.sh
+. "$IPKG_INSTROOT"/lib/functions.sh
 readonly NAME=rrm_nr
 
 config_load $NAME
